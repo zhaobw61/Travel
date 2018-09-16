@@ -1,12 +1,16 @@
 <template>
     <div>
-        hellow
+      <home-hearder></home-hearder>
     </div>
 </template>
 
 <script>
+import HomeHearder from './components/Header.vue'
 export default {
-  name: 'Home'
+  name: 'Home',
+  components: {
+    HomeHearder: HomeHearder
+  }
 }
 </script>
 
