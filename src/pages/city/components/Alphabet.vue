@@ -1,19 +1,13 @@
 <template>
     <ul class="list">
-        <li class="item">A</li>
-        <li class="item">B</li>
-        <li class="item">A</li>
-        <li class="item">A</li>
-        <li class="item">A</li>
-        <li class="item">A</li>
-        <li class="item">A</li>
-        <li class="item">A</li>
+        <li class="item" v-for="(item,key) of cities" :key="key">{{key}}</li>
     </ul>  
 </template>
 <script>
 
 export default {
   name: "CityAlphaber",
+  props:['cities'],
   mounted:function(){
       this.scroll = new Bscroll(this.$refs.wrapper)
   }
