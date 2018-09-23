@@ -2,8 +2,8 @@
   <div>
     <div class="title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom"  v-for="item of recommendList" :key="item.id">
-        <div class="item-img-wrapper"> 
+      <li class="item border-bottom"  v-for="item of list" :key="item.id">
+        <div class="item-img-wrapper">
           <img class="item-img" :src = item.imgUrl alt="">
         </div>
         <div class="item-info">
@@ -17,25 +17,8 @@
 <script>
 export default {
   name: 'HomeWeekend',
-  data () {
-    return {
-      recommendList: [{
-        id: '0001',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_200x200_46052773.jpg',
-        title: '上海杜莎夫人蜡像馆',
-        desc: '上海杜莎夫人蜡像馆上海杜莎夫人蜡像馆上海杜莎夫人蜡像馆'
-      }, {
-        id: '0002',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_200x200_46052773.jpg',
-        title: '上海杜莎夫人蜡像馆',
-        desc: '上海杜莎夫人蜡像馆上海杜莎夫人蜡像馆上海杜莎夫人蜡像馆'
-      }, {
-        id: '0003',
-        imgUrl: 'http://img1.qunarzz.com/sight/p0/1704/c9/c936f3fccfc6d7eda3.img.jpg_200x200_46052773.jpg',
-        title: '上海杜莎夫人蜡像馆',
-        desc: '上海杜莎夫人蜡像馆上海杜莎夫人蜡像馆上海杜莎夫人蜡像馆'
-      }]
-    }
+  props: {
+    list: Array
   }
 }
 </script>
@@ -50,7 +33,7 @@ export default {
   .item-img-wrappper{
     overflow hidden
     height 0
-    padding=bottom 33.9%
+    padding-bottom 37.09%
   }
   .item-img{
     width: 100%;

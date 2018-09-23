@@ -15,54 +15,21 @@
 <script>
 export default {
   name: 'HomeIcon',
+  props: {
+    list: Array
+  },
   data: function () {
     return {
       swiperOption: {
+        pagination: '.swiper-pagination',
         loop: true
-      },
-      iconList: [{
-        id: '001',
-        imgUrl: 'https://s.qunarzz.com/package_mobile/app/home/icon-local.png',
-        desc: '景点门票'
-      }, {
-        id: '002',
-        imgUrl: 'https://s.qunarzz.com/package_mobile/app/home/icon-local.png',
-        desc: '景点门票'
-      }, {
-        id: '003',
-        imgUrl: 'https://s.qunarzz.com/package_mobile/app/home/icon-local.png',
-        desc: '景点门票'
-      }, {
-        id: '004',
-        imgUrl: 'https://s.qunarzz.com/package_mobile/app/home/icon-local.png',
-        desc: '景点门票'
-      }, {
-        id: '005',
-        imgUrl: 'https://s.qunarzz.com/package_mobile/app/home/icon-local.png',
-        desc: '景点门票'
-      }, {
-        id: '006',
-        imgUrl: 'https://s.qunarzz.com/package_mobile/app/home/icon-local.png',
-        desc: '景点门票'
-      }, {
-        id: '007',
-        imgUrl: 'https://s.qunarzz.com/package_mobile/app/home/icon-local.png',
-        desc: '景点门票'
-      }, {
-        id: '008',
-        imgUrl: 'https://s.qunarzz.com/package_mobile/app/home/icon-local.png',
-        desc: '景点门票'
-      }, {
-        id: '008',
-        imgUrl: 'https://s.qunarzz.com/package_mobile/app/home/icon-local.png',
-        desc: '景点门票'
-      }]
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.iconList.forEach((item, index) => {
+      this.list.forEach((item, index) => {
         const page = Math.floor(index / 8)
         if (!pages[page]) {
           pages[page] = []
@@ -89,7 +56,7 @@ export default {
     height 0;
     padding-bottom:25%;
     background : #ccc;
-    .icon-umg{
+    .icon-img{
       position absolute;
       top: 0;
       left 0;
@@ -97,7 +64,6 @@ export default {
       bottom .44rem;
       box-sizing : border-box;
       padding  .1rem;
-      background blue;
       .icon-imgcontent{
         display :block;
         margin 0 auto;
