@@ -9,6 +9,7 @@
                     class="search-item border-bottom"
                     v-for="(item,index) of list"
                     :key='index'
+                    @click="handleCityClick(item.name)"
                 >{{item.name}}</li>
                 <li class="search-item border-bottom" v-show="!list.length">
                     没有找到匹配数据
@@ -61,7 +62,15 @@ export default {
         }
     },
     mounted:function(){
-        this.scroll = new Bscroll(this.$refs.search);
+        this.scroll = new Bscroll(this.$refs.search,{
+            click:true
+        });
+    },
+    methods:{
+        handleCityClick:function(city){
+            this.$store.dispatch('changeCity',city);
+            this.$router.push('/');
+        }
     }
 }
 </script>
