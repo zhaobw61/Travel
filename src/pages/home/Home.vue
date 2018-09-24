@@ -17,7 +17,7 @@ import HomeWeekend from './components/Weekend.vue'
 import axios from 'axios'
 import { mapState } from 'vuex'
 export default {
-  name: 'Home',
+  name: 'Home', // 1.组件递归  2.想对某个组件取消缓存  3.调试工具里的名字
   components: {
     HomeHeader,
     HomeSwiper,
