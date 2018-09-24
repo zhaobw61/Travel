@@ -61,7 +61,7 @@ export default {
     console.log('mounted');
     this.getHomeInfo()
   },
-  activated:function(){ // 页面加载的时候执行 keep-alive 新增的函数
+  activated:function(){ // 页面显示的时候执行 keep-alive 新增的生命周期函数 
     console.log('activated');
     if(this.lastCity != this.city){
       this.lastCity = this.city
