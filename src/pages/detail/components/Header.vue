@@ -51,6 +51,9 @@ export default {
        window.addEventListener('scroll',function(){
            this.handleScroll();
        }.bind(this))
+   },
+   deactivated:function(){ // 页面被隐藏的时候执行
+        window.removeEventListener('scroll')
    }
 }
 </script>
@@ -73,6 +76,7 @@ export default {
         }
     }
     .header-fixed{
+        z-index : 2
         position : fixed
         top 0 
         left 0
